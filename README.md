@@ -114,11 +114,13 @@ if __name__ == "__main__":
 ### input and output image
 
 **input image**
-! [](sample3.jpg)
+![ip image](./sample3.jpg)
+
 **Output image**
-! [](sample3_compressed.jpg)
+![op image](./sample3_compressed.jpg)
+
 **Terminal output**
-! [](terminaloutput.jpeg)
+![terminal op](./terminaloutput.jpeg)
 
 
 
