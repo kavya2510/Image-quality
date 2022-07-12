@@ -111,5 +111,15 @@ if __name__ == "__main__":
 
 **To use our script we need to type python filename.py imagename.jpg -j -q 8**
 
+### input and output image
+
+**input image**
+! [](sample3.jpg)
+**Output image**
+! [](sample3_compressed.jpg)
+**Terminal output**
+! [](terminaloutput.jpeg)
+
+
 
 
