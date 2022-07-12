@@ -1,4 +1,4 @@
-# AN Optimal Score for Image Quality
+# An Optimal Score for Image Quality
 Users upload images of various sizes (kB, MB) and resolutions. Images with high resolution or size results in longer upload times, higher space utilization on cloud/server and high latency while trying to view or download the images. To address the above challenges, we need to find
 a way to store images on the cloud/server with an optimal image quality, which strikes a fine
 balance between image quality and image size.
