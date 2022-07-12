@@ -12,7 +12,7 @@ Open up a new Python file and import it:
 `from PIL import Image`
 
 Before we dive into compressing images, let's grab a function to print the file size in a friendly format:
-`def get_size_format(b, factor=1024, suffix="B"):
+```def get_size_format(b, factor=1024, suffix="B"):
     """
     Scale bytes to its proper byte format
     e.g:
@@ -23,10 +23,10 @@ Before we dive into compressing images, let's grab a function to print the file 
         if b < factor:
             return f"{b:.2f}{unit}{suffix}"
         b /= factor
-    return f"{b:.2f}Y{suffix}"`
+    return f"{b:.2f}Y{suffix}"```
 
 Next, let's make our core function for compressing images:
-`def compress_img(image_name, new_size_ratio=0.9, quality=90, width=None, height=None, to_jpg=True):
+```def compress_img(image_name, new_size_ratio=0.9, quality=90, width=None, height=None, to_jpg=True):
     # load the image to memory
     img = Image.open(image_name)
     # print the original image shape
@@ -70,7 +70,7 @@ Next, let's make our core function for compressing images:
     # calculate the saving bytes
     saving_diff = new_image_size - image_size
     # print the saving percentage
-    print(f"[+] Image size change: {saving_diff/image_size*100:.2f}% of the original image size.")`
+    print(f"[+] Image size change: {saving_diff/image_size*100:.2f}% of the original image size.")```
 
 A giant function that does a lot of stuff, let's cover it in more detail:
 1. First, we use the *Image.open()* method to load the image to the memory, we get the size of the image file using *os.path.getsize()* so we can later compare this size with the new generated file's size.
@@ -80,7 +80,7 @@ A giant function that does a lot of stuff, let's cover it in more detail:
 5. Finally, we use the *save()* method to write the optimized image, and we set *optimize* to *True* along with the quality passed from the function. We then get the size of the new image and compare it with the size of the original image.
 
 Now that we have our core function, let's use *argparse* module to integrate it with the command-line arguments:
-`if __name__ == "__main__":
+```if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Simple Python script for compressing and resizing images")
     parser.add_argument("image", help="Target image to compress and/or resize")
@@ -101,7 +101,7 @@ Now that we have our core function, let's use *argparse* module to integrate it 
         print("[*] Height:", args.height)
     print("="*50)
     i=img.size
-    compress_img(args.image, args.resize_ratio, args.quality, i[0], i[1], args.to_jpg)`
+    compress_img(args.image, args.resize_ratio, args.quality, i[0], i[1], args.to_jpg)```
 
 **To use our script we need to type python filename.py imagename.jpg -j -q 8**
 
